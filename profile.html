@@ -83,15 +83,17 @@
         });
 
         // Log-out function
-        function logout() {
-            auth.signOut().then(function() {
-                // Log-out successful
-                window.location.href = 'login.html'; // back to page
-            }).catch(function(error) {
-                // An error happened.
-                console.error(error.message);
-            });
-        }
+        function logOutUser() {
+    auth.signOut()
+        .then(() => {
+            // Successful sign-out
+            window.location.replace('login.html'); // redirect to login page
+        })
+        .catch((err) => {
+            // Handle the error
+            console.error(err.message);
+        });
+}
     </script>
 </body>
 </html>
